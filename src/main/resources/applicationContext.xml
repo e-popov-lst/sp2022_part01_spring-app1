@@ -9,13 +9,27 @@
 
     <context:property-placeholder location="classpath:musicPlayer.properties"/>
 
-    <bean id="musicBean"
+    <bean id="rockMusicBean"
           class="ru.popov.springcourse.RockMusic">
+    </bean>
+
+    <bean id="classicalMusicBean"
+          class="ru.popov.springcourse.ClassicalMusic">
+    </bean>
+
+    <bean id="jazzMusicBean"
+          class="ru.popov.springcourse.JazzMusic">
     </bean>
 
     <bean id="musicPlayer"
           class="ru.popov.springcourse.MusicPlayer">
-        <property name="music" ref="musicBean"/>
+        <property name="musicList">
+            <list>
+                <ref bean="rockMusicBean"/>
+                <ref bean="classicalMusicBean"/>
+                <ref bean="jazzMusicBean"/>
+            </list>
+        </property>
 
         <property name="name" value="Some name from xml-file"/>
         <property name="volume" value="${musicPlayer.volume}"/>

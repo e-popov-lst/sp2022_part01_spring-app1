@@ -1,8 +1,8 @@
 package ru.popov.springcourse;
 
-public class ClassicalMusic implements Music {
+public class JazzMusic implements Music {
     @Override
     public String getSong() {
-        return "Hungarian Rhapsody";
+        return "What a wonderful world";
     }
 }
