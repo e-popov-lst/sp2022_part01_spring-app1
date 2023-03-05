@@ -2,10 +2,13 @@ package ru.popov.springcourse;
 
 import org.springframework.stereotype.Component;
 
-@Component("musicBean")
+import java.util.ArrayList;
+import java.util.List;
+
+@Component
 public class RockMusic implements Music {
     @Override
-    public String getSong() {
-        return "Wind cries Mary";
+    public List<String> getSong() {
+        return List.of("Wind cries Mary", "Try", "Shape of my heart");
     }
 }
